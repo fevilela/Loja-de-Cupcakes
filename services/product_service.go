@@ -1,10 +1,9 @@
 package services
 
 import (
-	"strings"
-
 	"github.com/fevilela/cupcakestore/models"
 	"github.com/fevilela/cupcakestore/repositories"
+	"strings"
 )
 
 type ProductService interface {

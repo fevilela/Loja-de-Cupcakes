@@ -1,12 +1,11 @@
 package controllers
 
 import (
-	"strconv"
-
 	"github.com/fevilela/cupcakestore/services"
 	"github.com/fevilela/cupcakestore/utils"
 	"github.com/fevilela/cupcakestore/views"
 	"github.com/gofiber/fiber/v2"
+	"strconv"
 )
 
 type ShoppingCartController interface {

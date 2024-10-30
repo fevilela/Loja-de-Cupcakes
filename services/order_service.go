@@ -2,7 +2,6 @@ package services
 
 import (
 	"fmt"
-
 	"github.com/fevilela/cupcakestore/models"
 	"github.com/fevilela/cupcakestore/repositories"
 )

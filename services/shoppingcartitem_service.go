@@ -1,10 +1,9 @@
 package services
 
 import (
-	"math"
-
 	"github.com/fevilela/cupcakestore/models"
 	"github.com/fevilela/cupcakestore/repositories"
+	"math"
 )
 
 type ShoppingCartItemService interface {

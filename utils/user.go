@@ -1,9 +1,8 @@
 package utils
 
 import (
-	"strconv"
-
 	"golang.org/x/crypto/bcrypt"
+	"strconv"
 )
 
 func PasswordHasher(password string) (string, error) {

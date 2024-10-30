@@ -1,10 +1,9 @@
 package models
 
 import (
-	"log"
-
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
+	"log"
 )
 
 type StockFilter struct {

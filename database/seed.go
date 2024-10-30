@@ -1,10 +1,9 @@
 package database
 
 import (
-	"log"
-
 	"github.com/fevilela/cupcakestore/models"
 	"gorm.io/gorm"
+	"log"
 )
 
 type Seeder interface {

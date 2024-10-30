@@ -1,9 +1,8 @@
 package session
 
 import (
-	"time"
-
 	"github.com/fevilela/cupcakestore/models"
+	"time"
 
 	"github.com/gofiber/fiber/v2/middleware/session"
 )

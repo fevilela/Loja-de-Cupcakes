@@ -1,10 +1,9 @@
 package repositories
 
 import (
-	"time"
-
 	"github.com/fevilela/cupcakestore/models"
 	"gorm.io/gorm"
+	"time"
 )
 
 type DashboardRepository interface {

@@ -2,7 +2,6 @@ package repositories
 
 import (
 	"errors"
-
 	"github.com/fevilela/cupcakestore/models"
 	"gorm.io/gorm"
 )

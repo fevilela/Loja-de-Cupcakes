@@ -2,12 +2,11 @@ package models
 
 import (
 	"fmt"
+	"github.com/disintegration/imaging"
+	"github.com/fevilela/cupcakestore/utils"
 	"image"
 	"mime/multipart"
 	"strings"
-
-	"github.com/disintegration/imaging"
-	"github.com/fevilela/cupcakestore/utils"
 )
 
 type ProductImage struct {

@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"fmt"
-
 	"github.com/fevilela/cupcakestore/models"
 	"github.com/fevilela/cupcakestore/services"
 	"github.com/fevilela/cupcakestore/utils"
