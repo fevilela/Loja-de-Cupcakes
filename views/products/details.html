@@ -1,0 +1,56 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container">
+            <h1 class="m-0 text-dark">Detalhes do Produto</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container">
+
+            <!-- Default box -->
+            <div class="card card-solid">
+                <div class="card-body">
+                    <div class="row row-eq-height">
+                        <div class="col-12 col-sm-6">
+                            <img src="{{.Object.Image}}" style="max-height: 400px; max-width: 400px; display: block; margin-left: auto; margin-right: auto;"
+                                 class="product-image img-fluid" alt="Product Image">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <h3 class="my-3">Informações do Produto</h3>
+                            <p style="font-size: 18px"><strong>Nome: </strong>{{.Object.Name}}</p>
+                            <p style="font-size: 18px"><strong>Descrição: </strong>{{.Object.Description}}</p>
+                            <p style="font-size: 18px"><strong>Ingredientes: </strong>{{.Object.Ingredients}}</p>
+                            <hr>
+                            <h4><strong>Preço:</strong> R$ {{ printf "%.2f" .Object.Price}}</h4>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="input-group mb-3">
+                                        <button class="btn btn-outline-secondary" type="button" id="{{.Object.ID}}-decrement"
+                                                onclick="decrementQuantity('{{.Object.ID}}')">-
+                                        </button>
+                                        <input type="number" id="{{.Object.ID}}-quantity" class="form-control text-center"
+                                               pattern="[0-9]*" inputmode="numeric" min="1" value="1" aria-label="Example text with button addon"
+                                               aria-describedby="{{.Object.ID}}-decrement {{.Object.ID}}-increment">
+                                        <button class="btn btn-outline-secondary" type="button" id="{{.Object.ID}}-increment"
+                                                onclick="incrementQuantity('{{.Object.ID}}')">+
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <a href="#" class="adicionar-ao-carrinho btn btn-primary" data-id="{{.Object.ID}}">Adicionar
+                                        ao Carrinho</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </section>
+
+    <!-- /.content -->
+</div>
+{{template "snippets/cart"}}

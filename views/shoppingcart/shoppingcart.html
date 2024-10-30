@@ -1,0 +1,75 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container">
+            <h1 class="m-0 text-dark">Carrinho de Compras</h1>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto">
+                    {{template "snippets/message" .}}
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Seu Carrinho</h3>
+                            <div class="card-tools">
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <a href="/store" class="mr-2 btn btn-sm btn-light text-dark">
+                                            <i class="fas fa-cart-plus"></i>
+                                            Adicionar Produtos
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap" id="shoppingCartTable">
+                                <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Preço</th>
+                                    <th>Quantidade</th>
+                                    <th>Subtotal</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cartItems">
+                                {{range .Object.Items}}
+                                    <tr>
+                                        <td><strong>{{.Product.Name}}</strong></td>
+                                        <td>R$ {{.ItemPrice}}</td>
+                                        <td><small>x</small>{{.Quantity}}</td>
+                                        <td>R$ {{mulf .Quantity .ItemPrice}}</td>
+                                        <td><a href="/cart/remove/{{.Product.ID}}"><u
+                                                        class="text-danger">Remover</u></a></td>
+                                    </tr>
+                                {{end}}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-footer"
+                             style="display: flex; justify-content: space-between; align-items: center;">
+                            <strong style="margin-right: auto;">Total: R$ {{ printf "%.2f" .Object.Total }}</strong>
+                            <div class="float-right">
+                                {{ if not .Profile.IsProfileComplete }}
+                                    <a href="/profile/{{.Profile.User.ID}}"><u>Complete o seu perfil</u></a> para
+                                    prosseguir para o checkout.
+                                {{ else }}
+                                    {{  if gt .Object.Total 0.0 }}
+                                        <a class="btn btn-success" href="/orders/checkout/{{.Object.ID}}">Finalizar</a>
+                                    {{ end }}
+                                {{ end }}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
