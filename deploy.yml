@@ -1,0 +1,31 @@
+name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Dispara o deploy quando há um push na branch 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Instalação do Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.16' # Ajuste para a versão necessária do Go
+
+    - name: Build do site
+      run: |
+        go build -o site
+        mkdir -p public
+        ./site > public/index.html
+
+    - name: Deploy para GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
